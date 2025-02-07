@@ -1,0 +1,17 @@
+# Utiliser une version complète de Node.js au lieu de Alpine
+FROM node:20
+
+WORKDIR /app
+
+# Copier les fichiers package.json et installer les dépendances
+COPY package*.json ./
+RUN npm install --omit=dev
+
+COPY . .
+
+# Construire l'application
+RUN npm run build
+
+EXPOSE 3001
+
+CMD ["npm", "run", "start:dev"]
