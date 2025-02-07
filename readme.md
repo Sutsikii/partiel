@@ -1,6 +1,10 @@
 
 ## Project setup
 
+clonez le projet, aller dans le backend faite : npm i 
+
+puis revenez a la racine
+
 Faire docker compose up -d --build 
 
 Pour l'api : http://localhost:3000
@@ -18,7 +22,7 @@ sur la route : http://localhost:3000/auth/register
 
 ## Pourquoi nextjs à la place d'angular ?
 
-Nous avons appris au dernier moment que le partiel était sur Angular, étant appeler juste "node.js" sur le site de l'école
+Nous avons appris au dernier moment que le partiel était sur Angular et NestJS, étant appeler juste "node.js" sur le site de l'école
 j'ai donc décidé pour fournir un front de prendre une stack que je connais bien, avec angular j'aurai pas eu le temps d'apprendre et de faire un front correcte. 
 
 
@@ -69,3 +73,31 @@ http://localhost:3000/auth/login
   "email": "admin@example.com",
   "password": "securepassword",
 }
+
+### avoir les commandes
+
+http://localhost:3000/orders
+
+### créer une commande
+
+http://localhost:3000/orders "POSTS"
+
+{
+  "items": [
+    { "productId": 1, "quantity": 2 },
+    { "productId": 3, "quantity": 1 }
+  ]
+}
+
+
+### mettre a jour une commande 
+
+http://localhost:3000/orders/:id/status
+
+{
+  "status": "Expédiée"
+}
+
+### supprimer une commande
+
+http://localhost:3000/orders/:id
